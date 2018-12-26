@@ -13,6 +13,10 @@ using System.Runtime.InteropServices;
     when I'm up late nights and made this for my own use, but if anyone is interested here it is.
 */
 
+/*
+    Thanks to the anonymous paste bin user that posted this code and the notice above.
+*/
+
 namespace MonitorDimmer
 {
     /// <summary>

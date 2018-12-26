@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dimmer));
             this.wheel = new System.Windows.Forms.NumericUpDown();
             this.pBar = new System.Windows.Forms.ProgressBar();
-            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.wheel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +48,7 @@
             this.wheel.Size = new System.Drawing.Size(72, 35);
             this.wheel.TabIndex = 0;
             this.wheel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.wheel.ValueChanged += new System.EventHandler(this.wheel_ValueChanged);
             // 
             // pBar
             // 
@@ -59,22 +59,12 @@
             this.pBar.Step = 1;
             this.pBar.TabIndex = 1;
             // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(183, 12);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 70);
-            this.btnReset.TabIndex = 2;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            // 
             // Dimmer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(270, 96);
-            this.Controls.Add(this.btnReset);
+            this.ClientSize = new System.Drawing.Size(175, 96);
             this.Controls.Add(this.pBar);
             this.Controls.Add(this.wheel);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -93,7 +83,6 @@
 
         private System.Windows.Forms.NumericUpDown wheel;
         private System.Windows.Forms.ProgressBar pBar;
-        private System.Windows.Forms.Button btnReset;
     }
 }
 

@@ -10,7 +10,12 @@ namespace Dimmer
             InitializeComponent();
 
             BrightnessController brightness = new BrightnessController();
-            BrightnessController.MonitorArray[0].SetBrightness(125);
+        }
+
+        private void wheel_ValueChanged(object sender, System.EventArgs e)
+        {
+            BrightnessController.MonitorArray[0].SetBrightness((int)wheel.Value);
+            BrightnessController.MonitorArray[1].SetBrightness((int)wheel.Value);
         }
     }
 }
