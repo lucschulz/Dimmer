@@ -5,17 +5,23 @@ namespace Dimmer
 {
     public partial class Dimmer : Form
     {
+        BrightnessController brightness;
+
+
         public Dimmer()
         {
             InitializeComponent();
 
-            BrightnessController brightness = new BrightnessController();
+            brightness = new BrightnessController();
+
+            BrightnessController.MonitorArray[0].SetBrightness((int)255);
+            BrightnessController.MonitorArray[1].SetBrightness((int)255);
         }
 
-        private void wheel_ValueChanged(object sender, System.EventArgs e)
+        private void Tbar_Scroll(object sender, System.EventArgs e)
         {
-            BrightnessController.MonitorArray[0].SetBrightness((int)wheel.Value);
-            BrightnessController.MonitorArray[1].SetBrightness((int)wheel.Value);
+            BrightnessController.MonitorArray[0].SetBrightness((int)tbar.Value);
+            BrightnessController.MonitorArray[1].SetBrightness((int)tbar.Value);
         }
     }
 }
