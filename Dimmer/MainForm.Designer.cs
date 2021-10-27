@@ -48,7 +48,7 @@
 			this.tbarMonitorOne.SmallChange = 5;
 			this.tbarMonitorOne.TabIndex = 2;
 			this.tbarMonitorOne.Value = 255;
-			this.tbarMonitorOne.Scroll += new System.EventHandler(this.Tbar_Scroll);
+			this.tbarMonitorOne.Scroll += new System.EventHandler(this.TbarMonitorOne_Scroll);
 			// 
 			// tbarMonitorTwo
 			// 
@@ -60,7 +60,7 @@
 			this.tbarMonitorTwo.SmallChange = 5;
 			this.tbarMonitorTwo.TabIndex = 3;
 			this.tbarMonitorTwo.Value = 255;
-			this.tbarMonitorTwo.Scroll += new System.EventHandler(this.tbarMonitorTwo_Scroll);
+			this.tbarMonitorTwo.Scroll += new System.EventHandler(this.TbarMonitorTwo_Scroll);
 			// 
 			// lblMonitorOne
 			// 
@@ -90,7 +90,7 @@
 			this.btnReset.TabIndex = 6;
 			this.btnReset.Text = "Reset";
 			this.btnReset.UseVisualStyleBackColor = true;
-			this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+			this.btnReset.Click += new System.EventHandler(this.BtnReset_Click);
 			// 
 			// Dimmer
 			// 
@@ -110,6 +110,7 @@
 			this.MinimizeBox = false;
 			this.Name = "Dimmer";
 			this.Text = "Dimmer";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dimmer_FormClosing);
 			((System.ComponentModel.ISupportInitialize)(this.tbarMonitorOne)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbarMonitorTwo)).EndInit();
 			this.ResumeLayout(false);
