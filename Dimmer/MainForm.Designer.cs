@@ -34,6 +34,7 @@
 			this.lblMonitorOne = new System.Windows.Forms.Label();
 			this.lblMonitorTwo = new System.Windows.Forms.Label();
 			this.btnReset = new System.Windows.Forms.Button();
+			this.lblMonitorOneValue = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.tbarMonitorOne)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbarMonitorTwo)).BeginInit();
 			this.SuspendLayout();
@@ -92,12 +93,23 @@
 			this.btnReset.UseVisualStyleBackColor = true;
 			this.btnReset.Click += new System.EventHandler(this.BtnReset_Click);
 			// 
+			// lblMonitorOneValue
+			// 
+			this.lblMonitorOneValue.AutoSize = true;
+			this.lblMonitorOneValue.ForeColor = System.Drawing.Color.Snow;
+			this.lblMonitorOneValue.Location = new System.Drawing.Point(392, 30);
+			this.lblMonitorOneValue.Name = "lblMonitorOneValue";
+			this.lblMonitorOneValue.Size = new System.Drawing.Size(19, 23);
+			this.lblMonitorOneValue.TabIndex = 7;
+			this.lblMonitorOneValue.Text = "0";
+			// 
 			// Dimmer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(428, 320);
+			this.Controls.Add(this.lblMonitorOneValue);
 			this.Controls.Add(this.btnReset);
 			this.Controls.Add(this.lblMonitorTwo);
 			this.Controls.Add(this.lblMonitorOne);
@@ -124,6 +136,7 @@
 		private System.Windows.Forms.Label lblMonitorOne;
 		private System.Windows.Forms.Label lblMonitorTwo;
 		private System.Windows.Forms.Button btnReset;
+		private System.Windows.Forms.Label lblMonitorOneValue;
 	}
 }
 

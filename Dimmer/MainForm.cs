@@ -16,11 +16,14 @@ namespace Dimmer
 
             BrightnessController.MonitorArray[0].SetBrightness((int)255);
             BrightnessController.MonitorArray[1].SetBrightness((int)255);
+
+            lblMonitorOneValue.Text = ((int)tbarMonitorOne.Value).ToString();
         }
 
         private void TbarMonitorOne_Scroll(object sender, System.EventArgs e)
         {
             BrightnessController.MonitorArray[0].SetBrightness((int)tbarMonitorOne.Value);
+            lblMonitorOneValue.Text = ((int)tbarMonitorOne.Value).ToString();
         }
 
 		private void TbarMonitorTwo_Scroll(object sender, System.EventArgs e)
