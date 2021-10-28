@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dimmer));
 			this.tbarMonitorOne = new System.Windows.Forms.TrackBar();
 			this.tbarMonitorTwo = new System.Windows.Forms.TrackBar();
@@ -41,6 +42,7 @@
 			this.btnMinTwo = new System.Windows.Forms.Button();
 			this.btnMaxTwo = new System.Windows.Forms.Button();
 			this.btnMaxOne = new System.Windows.Forms.Button();
+			this.sysTrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.tbarMonitorOne)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbarMonitorTwo)).BeginInit();
 			this.SuspendLayout();
@@ -169,6 +171,13 @@
 			this.btnMaxOne.UseVisualStyleBackColor = true;
 			this.btnMaxOne.Click += new System.EventHandler(this.BtnMaxOne_Click);
 			// 
+			// sysTrayIcon
+			// 
+			this.sysTrayIcon.BalloonTipText = "Dimmer";
+			this.sysTrayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("sysTrayIcon.Icon")));
+			this.sysTrayIcon.Visible = true;
+			this.sysTrayIcon.Click += new System.EventHandler(this.SysTrayIcon_Click);
+			// 
 			// Dimmer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -191,7 +200,6 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.MaximizeBox = false;
-			this.MinimizeBox = false;
 			this.Name = "Dimmer";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Dimmer";
@@ -216,6 +224,7 @@
 		private System.Windows.Forms.Button btnMinTwo;
 		private System.Windows.Forms.Button btnMaxTwo;
 		private System.Windows.Forms.Button btnMaxOne;
+		private System.Windows.Forms.NotifyIcon sysTrayIcon;
 	}
 }
 

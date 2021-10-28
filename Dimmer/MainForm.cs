@@ -84,5 +84,11 @@ namespace Dimmer
             BrightnessController.MonitorArray[1].SetBrightness((int)255);
             tbarMonitorTwo.Value = tbarMonitorTwo.Maximum;
         }
+
+		private void SysTrayIcon_Click(object sender, System.EventArgs e)
+		{
+            this.WindowState = FormWindowState.Normal;
+			this.Activate();
+		}
 	}
 }
