@@ -87,8 +87,18 @@ namespace Dimmer
 
 		private void SysTrayIcon_Click(object sender, System.EventArgs e)
 		{
-            this.WindowState = FormWindowState.Normal;
-			this.Activate();
+            WindowState = FormWindowState.Normal;
+            ShowInTaskbar = true;
+			Activate();
 		}
+
+		private void Dimmer_Resize(object sender, System.EventArgs e)
+		{
+            if (WindowState == FormWindowState.Minimized)
+            {
+                ShowInTaskbar = false;
+                sysTrayIcon.Visible = true;
+            }
+        }
 	}
 }

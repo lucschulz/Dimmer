@@ -204,6 +204,7 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Dimmer";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dimmer_FormClosing);
+			this.Resize += new System.EventHandler(this.Dimmer_Resize);
 			((System.ComponentModel.ISupportInitialize)(this.tbarMonitorOne)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbarMonitorTwo)).EndInit();
 			this.ResumeLayout(false);
