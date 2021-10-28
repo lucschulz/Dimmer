@@ -35,6 +35,12 @@
 			this.lblMonitorTwo = new System.Windows.Forms.Label();
 			this.btnReset = new System.Windows.Forms.Button();
 			this.lblMonitorOneValue = new System.Windows.Forms.Label();
+			this.lblMonitorTwoValue = new System.Windows.Forms.Label();
+			this.btnDimAll = new System.Windows.Forms.Button();
+			this.btnMinOne = new System.Windows.Forms.Button();
+			this.btnMinTwo = new System.Windows.Forms.Button();
+			this.btnMaxTwo = new System.Windows.Forms.Button();
+			this.btnMaxOne = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.tbarMonitorOne)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbarMonitorTwo)).BeginInit();
 			this.SuspendLayout();
@@ -54,7 +60,7 @@
 			// tbarMonitorTwo
 			// 
 			this.tbarMonitorTwo.LargeChange = 10;
-			this.tbarMonitorTwo.Location = new System.Drawing.Point(12, 165);
+			this.tbarMonitorTwo.Location = new System.Drawing.Point(12, 199);
 			this.tbarMonitorTwo.Maximum = 255;
 			this.tbarMonitorTwo.Name = "tbarMonitorTwo";
 			this.tbarMonitorTwo.Size = new System.Drawing.Size(404, 56);
@@ -77,7 +83,7 @@
 			// 
 			this.lblMonitorTwo.AutoSize = true;
 			this.lblMonitorTwo.ForeColor = System.Drawing.Color.Snow;
-			this.lblMonitorTwo.Location = new System.Drawing.Point(12, 139);
+			this.lblMonitorTwo.Location = new System.Drawing.Point(12, 173);
 			this.lblMonitorTwo.Name = "lblMonitorTwo";
 			this.lblMonitorTwo.Size = new System.Drawing.Size(106, 23);
 			this.lblMonitorTwo.TabIndex = 5;
@@ -85,9 +91,9 @@
 			// 
 			// btnReset
 			// 
-			this.btnReset.Location = new System.Drawing.Point(276, 247);
+			this.btnReset.Location = new System.Drawing.Point(276, 330);
 			this.btnReset.Name = "btnReset";
-			this.btnReset.Size = new System.Drawing.Size(140, 61);
+			this.btnReset.Size = new System.Drawing.Size(140, 36);
 			this.btnReset.TabIndex = 6;
 			this.btnReset.Text = "Reset";
 			this.btnReset.UseVisualStyleBackColor = true;
@@ -103,12 +109,78 @@
 			this.lblMonitorOneValue.TabIndex = 7;
 			this.lblMonitorOneValue.Text = "0";
 			// 
+			// lblMonitorTwoValue
+			// 
+			this.lblMonitorTwoValue.AutoSize = true;
+			this.lblMonitorTwoValue.ForeColor = System.Drawing.Color.Snow;
+			this.lblMonitorTwoValue.Location = new System.Drawing.Point(392, 173);
+			this.lblMonitorTwoValue.Name = "lblMonitorTwoValue";
+			this.lblMonitorTwoValue.Size = new System.Drawing.Size(19, 23);
+			this.lblMonitorTwoValue.TabIndex = 8;
+			this.lblMonitorTwoValue.Text = "0";
+			// 
+			// btnDimAll
+			// 
+			this.btnDimAll.Location = new System.Drawing.Point(16, 330);
+			this.btnDimAll.Name = "btnDimAll";
+			this.btnDimAll.Size = new System.Drawing.Size(140, 36);
+			this.btnDimAll.TabIndex = 9;
+			this.btnDimAll.Text = "Minimum Both";
+			this.btnDimAll.UseVisualStyleBackColor = true;
+			this.btnDimAll.Click += new System.EventHandler(this.BtnDimAll_Click);
+			// 
+			// btnMinOne
+			// 
+			this.btnMinOne.Location = new System.Drawing.Point(16, 100);
+			this.btnMinOne.Name = "btnMinOne";
+			this.btnMinOne.Size = new System.Drawing.Size(50, 36);
+			this.btnMinOne.TabIndex = 10;
+			this.btnMinOne.Text = "Min";
+			this.btnMinOne.UseVisualStyleBackColor = true;
+			this.btnMinOne.Click += new System.EventHandler(this.BtnMinOne_Click);
+			// 
+			// btnMinTwo
+			// 
+			this.btnMinTwo.Location = new System.Drawing.Point(16, 243);
+			this.btnMinTwo.Name = "btnMinTwo";
+			this.btnMinTwo.Size = new System.Drawing.Size(50, 36);
+			this.btnMinTwo.TabIndex = 11;
+			this.btnMinTwo.Text = "Min";
+			this.btnMinTwo.UseVisualStyleBackColor = true;
+			this.btnMinTwo.Click += new System.EventHandler(this.BtnMinTwo_Click);
+			// 
+			// btnMaxTwo
+			// 
+			this.btnMaxTwo.Location = new System.Drawing.Point(361, 243);
+			this.btnMaxTwo.Name = "btnMaxTwo";
+			this.btnMaxTwo.Size = new System.Drawing.Size(50, 36);
+			this.btnMaxTwo.TabIndex = 13;
+			this.btnMaxTwo.Text = "Max";
+			this.btnMaxTwo.UseVisualStyleBackColor = true;
+			this.btnMaxTwo.Click += new System.EventHandler(this.BtnMaxTwo_Click);
+			// 
+			// btnMaxOne
+			// 
+			this.btnMaxOne.Location = new System.Drawing.Point(361, 100);
+			this.btnMaxOne.Name = "btnMaxOne";
+			this.btnMaxOne.Size = new System.Drawing.Size(50, 36);
+			this.btnMaxOne.TabIndex = 12;
+			this.btnMaxOne.Text = "Max";
+			this.btnMaxOne.UseVisualStyleBackColor = true;
+			this.btnMaxOne.Click += new System.EventHandler(this.BtnMaxOne_Click);
+			// 
 			// Dimmer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
-			this.ClientSize = new System.Drawing.Size(428, 320);
+			this.ClientSize = new System.Drawing.Size(429, 378);
+			this.Controls.Add(this.btnMaxTwo);
+			this.Controls.Add(this.btnMaxOne);
+			this.Controls.Add(this.btnMinTwo);
+			this.Controls.Add(this.btnMinOne);
+			this.Controls.Add(this.btnDimAll);
+			this.Controls.Add(this.lblMonitorTwoValue);
 			this.Controls.Add(this.lblMonitorOneValue);
 			this.Controls.Add(this.btnReset);
 			this.Controls.Add(this.lblMonitorTwo);
@@ -121,6 +193,7 @@
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "Dimmer";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Dimmer";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dimmer_FormClosing);
 			((System.ComponentModel.ISupportInitialize)(this.tbarMonitorOne)).EndInit();
@@ -137,6 +210,12 @@
 		private System.Windows.Forms.Label lblMonitorTwo;
 		private System.Windows.Forms.Button btnReset;
 		private System.Windows.Forms.Label lblMonitorOneValue;
+		private System.Windows.Forms.Label lblMonitorTwoValue;
+		private System.Windows.Forms.Button btnDimAll;
+		private System.Windows.Forms.Button btnMinOne;
+		private System.Windows.Forms.Button btnMinTwo;
+		private System.Windows.Forms.Button btnMaxTwo;
+		private System.Windows.Forms.Button btnMaxOne;
 	}
 }
 

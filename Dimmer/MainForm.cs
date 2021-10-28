@@ -18,6 +18,7 @@ namespace Dimmer
             BrightnessController.MonitorArray[1].SetBrightness((int)255);
 
             lblMonitorOneValue.Text = ((int)tbarMonitorOne.Value).ToString();
+            lblMonitorTwoValue.Text = ((int)tbarMonitorTwo.Value).ToString();
         }
 
         private void TbarMonitorOne_Scroll(object sender, System.EventArgs e)
@@ -29,6 +30,7 @@ namespace Dimmer
 		private void TbarMonitorTwo_Scroll(object sender, System.EventArgs e)
         {
             BrightnessController.MonitorArray[1].SetBrightness((int)tbarMonitorTwo.Value);
+            lblMonitorTwoValue.Text = ((int)tbarMonitorTwo.Value).ToString();
         }
 
 		private void BtnReset_Click(object sender, System.EventArgs e)
@@ -49,5 +51,38 @@ namespace Dimmer
 		{
             ResetDefaultBrightness();
 		}
+
+		private void BtnDimAll_Click(object sender, System.EventArgs e)
+		{
+            BrightnessController.MonitorArray[0].SetBrightness((int)0);
+            BrightnessController.MonitorArray[1].SetBrightness((int)0);
+
+            tbarMonitorOne.Value = tbarMonitorOne.Minimum;
+            tbarMonitorTwo.Value = tbarMonitorTwo.Minimum;
+        }
+
+		private void BtnMinOne_Click(object sender, System.EventArgs e)
+		{
+            BrightnessController.MonitorArray[0].SetBrightness(0);
+            tbarMonitorOne.Value = tbarMonitorOne.Minimum;
+		}
+
+		private void BtnMaxOne_Click(object sender, System.EventArgs e)
+		{
+            BrightnessController.MonitorArray[0].SetBrightness((int)255);
+            tbarMonitorOne.Value = tbarMonitorOne.Maximum;
+        }
+
+		private void BtnMinTwo_Click(object sender, System.EventArgs e)
+		{
+            BrightnessController.MonitorArray[1].SetBrightness(0);
+            tbarMonitorTwo.Value = tbarMonitorTwo.Minimum;
+        }
+
+		private void BtnMaxTwo_Click(object sender, System.EventArgs e)
+		{
+            BrightnessController.MonitorArray[1].SetBrightness((int)255);
+            tbarMonitorTwo.Value = tbarMonitorTwo.Maximum;
+        }
 	}
 }
