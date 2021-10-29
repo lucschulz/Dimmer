@@ -100,5 +100,10 @@ namespace Dimmer
                 sysTrayIcon.Visible = true;
             }
         }
+
+		private void RightClickExit_Click(object sender, System.EventArgs e)
+		{
+            Application.Exit();
+		}
 	}
 }

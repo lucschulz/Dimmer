@@ -43,8 +43,11 @@
 			this.btnMaxTwo = new System.Windows.Forms.Button();
 			this.btnMaxOne = new System.Windows.Forms.Button();
 			this.sysTrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
+			this.rightClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.rightClickExit = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.tbarMonitorOne)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbarMonitorTwo)).BeginInit();
+			this.rightClickMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tbarMonitorOne
@@ -53,7 +56,7 @@
 			this.tbarMonitorOne.Location = new System.Drawing.Point(12, 56);
 			this.tbarMonitorOne.Maximum = 255;
 			this.tbarMonitorOne.Name = "tbarMonitorOne";
-			this.tbarMonitorOne.Size = new System.Drawing.Size(404, 56);
+			this.tbarMonitorOne.Size = new System.Drawing.Size(404, 45);
 			this.tbarMonitorOne.SmallChange = 5;
 			this.tbarMonitorOne.TabIndex = 2;
 			this.tbarMonitorOne.Value = 255;
@@ -65,7 +68,7 @@
 			this.tbarMonitorTwo.Location = new System.Drawing.Point(12, 199);
 			this.tbarMonitorTwo.Maximum = 255;
 			this.tbarMonitorTwo.Name = "tbarMonitorTwo";
-			this.tbarMonitorTwo.Size = new System.Drawing.Size(404, 56);
+			this.tbarMonitorTwo.Size = new System.Drawing.Size(404, 45);
 			this.tbarMonitorTwo.SmallChange = 5;
 			this.tbarMonitorTwo.TabIndex = 3;
 			this.tbarMonitorTwo.Value = 255;
@@ -77,7 +80,7 @@
 			this.lblMonitorOne.ForeColor = System.Drawing.Color.Snow;
 			this.lblMonitorOne.Location = new System.Drawing.Point(12, 30);
 			this.lblMonitorOne.Name = "lblMonitorOne";
-			this.lblMonitorOne.Size = new System.Drawing.Size(108, 23);
+			this.lblMonitorOne.Size = new System.Drawing.Size(83, 17);
 			this.lblMonitorOne.TabIndex = 4;
 			this.lblMonitorOne.Text = "Monitor One";
 			// 
@@ -87,7 +90,7 @@
 			this.lblMonitorTwo.ForeColor = System.Drawing.Color.Snow;
 			this.lblMonitorTwo.Location = new System.Drawing.Point(12, 173);
 			this.lblMonitorTwo.Name = "lblMonitorTwo";
-			this.lblMonitorTwo.Size = new System.Drawing.Size(106, 23);
+			this.lblMonitorTwo.Size = new System.Drawing.Size(82, 17);
 			this.lblMonitorTwo.TabIndex = 5;
 			this.lblMonitorTwo.Text = "Monitor Two";
 			// 
@@ -107,7 +110,7 @@
 			this.lblMonitorOneValue.ForeColor = System.Drawing.Color.Snow;
 			this.lblMonitorOneValue.Location = new System.Drawing.Point(392, 30);
 			this.lblMonitorOneValue.Name = "lblMonitorOneValue";
-			this.lblMonitorOneValue.Size = new System.Drawing.Size(19, 23);
+			this.lblMonitorOneValue.Size = new System.Drawing.Size(15, 17);
 			this.lblMonitorOneValue.TabIndex = 7;
 			this.lblMonitorOneValue.Text = "0";
 			// 
@@ -117,7 +120,7 @@
 			this.lblMonitorTwoValue.ForeColor = System.Drawing.Color.Snow;
 			this.lblMonitorTwoValue.Location = new System.Drawing.Point(392, 173);
 			this.lblMonitorTwoValue.Name = "lblMonitorTwoValue";
-			this.lblMonitorTwoValue.Size = new System.Drawing.Size(19, 23);
+			this.lblMonitorTwoValue.Size = new System.Drawing.Size(15, 17);
 			this.lblMonitorTwoValue.TabIndex = 8;
 			this.lblMonitorTwoValue.Text = "0";
 			// 
@@ -174,13 +177,29 @@
 			// sysTrayIcon
 			// 
 			this.sysTrayIcon.BalloonTipText = "Dimmer";
+			this.sysTrayIcon.ContextMenuStrip = this.rightClickMenu;
 			this.sysTrayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("sysTrayIcon.Icon")));
+			this.sysTrayIcon.Text = "Dimmer";
 			this.sysTrayIcon.Visible = true;
 			this.sysTrayIcon.Click += new System.EventHandler(this.SysTrayIcon_Click);
 			// 
+			// rightClickMenu
+			// 
+			this.rightClickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rightClickExit});
+			this.rightClickMenu.Name = "rightClickMenu";
+			this.rightClickMenu.Size = new System.Drawing.Size(181, 48);
+			// 
+			// rightClickExit
+			// 
+			this.rightClickExit.Name = "rightClickExit";
+			this.rightClickExit.Size = new System.Drawing.Size(180, 22);
+			this.rightClickExit.Text = "Exit";
+			this.rightClickExit.Click += new System.EventHandler(this.RightClickExit_Click);
+			// 
 			// Dimmer
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(429, 378);
@@ -207,6 +226,7 @@
 			this.Resize += new System.EventHandler(this.Dimmer_Resize);
 			((System.ComponentModel.ISupportInitialize)(this.tbarMonitorOne)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.tbarMonitorTwo)).EndInit();
+			this.rightClickMenu.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -226,6 +246,8 @@
 		private System.Windows.Forms.Button btnMaxTwo;
 		private System.Windows.Forms.Button btnMaxOne;
 		private System.Windows.Forms.NotifyIcon sysTrayIcon;
+		private System.Windows.Forms.ContextMenuStrip rightClickMenu;
+		private System.Windows.Forms.ToolStripMenuItem rightClickExit;
 	}
 }
 
