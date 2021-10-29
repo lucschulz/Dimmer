@@ -5,7 +5,7 @@ namespace Dimmer
 {
     public partial class Dimmer : Form
     {
-        BrightnessController brightness;
+		BrightnessController brightness;
 
 
         public Dimmer()
@@ -19,6 +19,8 @@ namespace Dimmer
 
             lblMonitorOneValue.Text = ((int)tbarMonitorOne.Value).ToString();
             lblMonitorTwoValue.Text = ((int)tbarMonitorTwo.Value).ToString();
+
+            MinimizeToSystemTray();
         }
 
         private void TbarMonitorOne_Scroll(object sender, System.EventArgs e)
@@ -96,9 +98,15 @@ namespace Dimmer
 		{
             if (WindowState == FormWindowState.Minimized)
             {
-                ShowInTaskbar = false;
-                sysTrayIcon.Visible = true;
+                MinimizeToSystemTray();
             }
+        }
+
+        private void MinimizeToSystemTray()
+		{
+            ShowInTaskbar = false;
+            sysTrayIcon.Visible = true;
+            WindowState = FormWindowState.Minimized;
         }
 
 		private void RightClickExit_Click(object sender, System.EventArgs e)

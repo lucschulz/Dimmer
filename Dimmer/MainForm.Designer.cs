@@ -188,12 +188,12 @@
 			this.rightClickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rightClickExit});
 			this.rightClickMenu.Name = "rightClickMenu";
-			this.rightClickMenu.Size = new System.Drawing.Size(181, 48);
+			this.rightClickMenu.Size = new System.Drawing.Size(94, 26);
 			// 
 			// rightClickExit
 			// 
 			this.rightClickExit.Name = "rightClickExit";
-			this.rightClickExit.Size = new System.Drawing.Size(180, 22);
+			this.rightClickExit.Size = new System.Drawing.Size(93, 22);
 			this.rightClickExit.Text = "Exit";
 			this.rightClickExit.Click += new System.EventHandler(this.RightClickExit_Click);
 			// 
@@ -221,7 +221,7 @@
 			this.MaximizeBox = false;
 			this.Name = "Dimmer";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Dimmer";
+			this.Text = "Dimmer 2.2";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dimmer_FormClosing);
 			this.Resize += new System.EventHandler(this.Dimmer_Resize);
 			((System.ComponentModel.ISupportInitialize)(this.tbarMonitorOne)).EndInit();
